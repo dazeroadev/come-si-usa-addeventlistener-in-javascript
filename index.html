@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+	<title>addEventListener</title>
+</head>
+<body>
+	<input placeholder="Nome" id="nameInput">
+	<hr>
+	Nome: <span id="nameStamp"></span>
+	<hr>
+	<button id="hello">Salutami</button>
+	<script>
+
+		let nameInput = document.getElementById("nameInput");
+		let nameStamp = document.getElementById("nameStamp");
+
+		let hello = document.getElementById("hello");
+
+		let name;
+
+		nameInput.addEventListener("input", function(e) {
+			nameStamp.textContent = e.target.value;
+			name = e.target.value;
+		});
+
+		hello.addEventListener("click",function() {
+			alert(`Ciao ${name}!`);
+		});
+
+	</script>
+</body>
+</html>
